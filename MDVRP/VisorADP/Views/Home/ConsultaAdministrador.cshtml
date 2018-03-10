@@ -1,0 +1,99 @@
+﻿@model IEnumerable<VisorADP.Models.Usuario>
+
+
+@{
+    Layout = null;
+    ViewBag.Title = "grid";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 15);
+
+}
+
+@Scripts.Render("~/Assets/js/jquery-1.11.3.min.js")
+@Scripts.Render("~/Assets/js/bootstrap.min.js")
+@Scripts.Render("~/Assets/js/jquery.layout.js")
+@Styles.Render("~/Assets/css/bootstrap.min.css")
+@Styles.Render("~/Assets/css/bootstrap-theme.min.css")
+@Scripts.Render("~/Assets/js/consultaAdministrador.js")
+@Styles.Render("~/Assets/css/consultaAdministrador.css")
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil - Administrador</title>
+
+   
+</head>
+<body>
+
+    <div id="header">
+        @* <div id="titulo">
+                ADP – Visor</div>*@
+        <div id="banner">
+            <img id="imgADP" src="~/Assets/img/ADPHomeImages/Materiales/logoFF.png" />
+        </div>
+        <div id="separador2">         
+            <div id="loginUsuario">
+                <label id="lblNombreLogout" ><span class="glyphicon glyphicon-user"></span> Administrador</label>
+                <a id="cerrarSesion" href='@Url.Action("CerrarSession", "Home")' class="top_link"><span>Cerrar</span></a>
+            </div>           
+        </div>
+    </div>
+    <div id="divBusqueda">
+        @using (Html.BeginForm("ConsultaAdministrador", "Home", FormMethod.Post))
+        {           
+            @Html.TextBox("txtBusqueda", null, new { placeholder = "Usuario", @class = "form-control txtBusqueda" })    
+            <button id="btnBuscar" type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Buscar</button>              
+        }
+    </div>
+
+
+    <div id="container">
+
+                @grid.GetHtml(
+
+            tableStyle: "table", // applying style on grid
+
+
+            fillEmptyRows: false,
+
+            //show empty row when there is only one record on page to it will display all empty rows there.       
+
+            headerStyle: "header", //applying style.
+            footerStyle: "grid-footer", //applying style.
+
+            mode: WebGridPagerModes.All, //paging to grid 
+
+            firstText: "<< Primero",
+            previousText: "< Anterior",
+            nextText: "Siguiente >",
+            lastText: "Último >>",
+
+            columns: new[]  // colums in grid
+
+            {
+                grid.Column("Id"), //the model fields to display
+                grid.Column("NombreUsuario", "Usuario"),
+                grid.Column("Nombres"),
+                grid.Column("Apellidos"),
+                grid.Column("Email"),
+                grid.Column("Celular"),
+                grid.Column("Telefono", "Teléfono"),
+                grid.Column("RazonSocial", "Razón Social"),
+                grid.Column("Cuit", "CUIT"),
+                grid.Column("Direccion", "Dirección"),
+                grid.Column("Departamento"),
+           })
+
+
+    </div>
+    <div id="footer">
+        <div id="separador2Footer">
+            <div id="version">
+                © ADP - v1.0 - Uruguay
+            </div>
+        </div>
+    </div>     
+</body>
+</html>

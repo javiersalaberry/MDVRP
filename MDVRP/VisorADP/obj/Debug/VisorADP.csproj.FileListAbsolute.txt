@@ -1,0 +1,13 @@
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\VisorADP.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\VisorADP.pdb
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\System.EnterpriseServices.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\WebGrease.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\WebMatrix.Data.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\WebMatrix.WebData.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\WebMatrix.Data.xml
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\bin\WebMatrix.WebData.xml
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\obj\Debug\VisorADP.dll
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\obj\Debug\VisorADP.pdb
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\obj\Debug\VisorADP.Migrations.AdpMigration.resources
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\obj\Debug\VisorADP.csproj.GenerateResource.Cache
+C:\Users\jsalaberry\Desktop\VisorADP\VisorADP\VisorADP\obj\Debug\VisorADP.csprojResolveAssemblyReference.cache

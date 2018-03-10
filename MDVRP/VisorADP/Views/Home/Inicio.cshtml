@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+@Styles.Render("~/Assets/css/login.css")
+@Scripts.Render("~/Assets/js/login.js")
+<div>
+    <div id="loginDiv">
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { }))
+        {
+            <div id="formLogin">
+                <div>
+                    <label id="UserName">Usuario</label>
+                    @Html.TextBox("txtNombreUsuario", null, new { @class = "textBoxLogin" })
+                </div>
+                <div>
+                    <label id="UserPass">Contraseña</label>
+                    @Html.Password("txtPasswordUsuario", null, new { @class = "textBoxLogin" })
+                </div>
+            </div>
+                    
+            <button id="btnLogin" type="submit" class="btn btnsLoginStyle" style="width:100%">Ingresar</button>             
+        }
+        <button id="btnRegistro" class="btn btnsLoginStyle" style="width:100%">Registrarse</button>
+    </div>
+    <div id="registerDiv" class="ocultar">
+        <button id="btnVolverRegistro" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Registro de Usuario</h2>
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { }))
+        {   
+            <div class="form-group">
+                <label for="inputUsuario">Usuario</label>
+                <input type="text" class="form-control" id="inputUsuario" name="inputUsuario">
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail">
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword">
+                </div>
+                <div class="form-group">
+                    <label for="inputPasswordConfirm">Confirm</label>
+                    <input type="password" class="form-control" id="inputPasswordConfirm">
+                </div>
+            </div>
+             <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputNombres">Nombres</label>
+                    <input type="text" class="form-control" id="inputNombres">
+                </div>
+                <div class="form-group">
+                    <label for="inputApellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="inputApellidos">
+                </div>
+            </div>
+             <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputCelular">Celular</label>
+                    <input type="text" class="form-control" id="inputCelular">
+                </div>
+                <div class="form-group">
+                    <label for="inputTelefono">Teléfono</label>
+                    <input type="text" class="form-control" id="inputTelefono">
+                </div>
+            </div>
+              <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputRazonSocial">Razón social</label>
+                    <input type="text" class="form-control" id="inputRazonSocial">
+                </div>
+                <div class="form-group">
+                    <label for="inputCUIT">CUIT</label>
+                    <input type="text" class="form-control" id="inputCUIT">
+                </div>
+             </div>
+             <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputDireccion">Dirección</label>
+                    <input type="text" class="form-control" id="inputDireccion">
+                </div>
+                <div class="form-group">
+                    <label for="inputCiudad">Ciudad</label>
+                    <input type="text" class="form-control" id="inputCiudad">
+                </div>
+             </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="inputDepartamento">Departamento</label>
+                    <input type="text" class="form-control" id="inputDepartamento">
+                </div>
+                <div class="form-group">
+                    <label for="inputPais">Pais</label>
+                    <input type="text" class="form-control" id="inputPais">
+                </div>
+             </div>
+             <div class="form-group">
+                <label for="inputEstablecimiento">Establecimiento</label>
+                <input type="text" class="form-control" id="inputEstablecimiento">
+            </div>
+                  
+            <button type="submit" class="btn btn-success myRight">Enviar</button>
+        }
+       @* @{
+            if (ViewBag.register != null && ViewBag.register)
+            {
+                <script>alert("asdas")</script>
+            }
+        }*@
+    </div>
+</div>
+
+
+@section Scripts {
+
+    @*<script type="text/javascript">
+        
+         $(document).ready(function () {
+            if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod' ||navigator.platform == 'Android'  || navigator.userAgent.match(/iemobile/i) || navigator.userAgent.match(/Windows Phone/i))
+            {
+                 document.getElementById("inicio2").style.top = "21px";
+             }
+             else {
+                 var ua = navigator.userAgent.toLowerCase();
+                 var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+                 if (isAndroid) {
+                     document.getElementById("inicio2").style.top = "21px";
+                 }
+             
+            }
+
+            if (isInternetExpolorer()) {
+                alert("Internet explorer no es compatible con esta aplicación. Se sugiere utilizar Google Chrome o Mozilla Firefox");
+                close();
+                return;
+            }
+
+         })
+
+         function isInternetExpolorer() {
+             if (/MSIE 10/i.test(navigator.userAgent)) {
+                 return true;
+             }
+
+             if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+                 return true;
+             }
+
+             return false;
+         }
+
+      </script>*@
+
+}

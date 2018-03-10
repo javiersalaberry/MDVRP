@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+         <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil</title>
+</head>
+<body>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td height="22" colspan="3" bgcolor="#9B1E1D">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="20%" height="100" bgcolor="#c42723">&nbsp;</td>
+      <td width="60%" valign="bottom" bgcolor="#c42723"><font color="#FFFFFF">Estimado @TempData["user"]</font></td>
+      <td width="20%" valign="bottom" bgcolor="#c42723">&nbsp;</td>
+    </tr>
+    @*<tr>
+      <td colspan="3" align="center" valign="top" background="FND_confirmar.png" style="background-repeat:repeat-x">&nbsp;</td>
+    </tr>*@
+    <tr>
+      <td height="22">&nbsp;</td>
+      <td height="22" align="left"><table width="100%" border="0" align="left">
+        <tbody>
+          <tr>
+            <td align="left" valign="middle"><p><font face="Myriad Pro, Gill Sans, Gill Sans MT, Helvetica, Arial, sans-serif" size="-1">El proceso de reiniciación de contraseña ha sido realizado con éxito. Puede ingresar al sistema utilizando sus nuevas credenciales desde la página principal.
+             </font></p>
+             <br>
+             <br>
+             @*<a href=http://fertifacil.adp.com.uy/fertifacil/index.html> Presione este enlace para regresar a la pagina principal</a>*@
+               @Html.ActionLink("Presione este enlace para regresar a la pagina principal", "ADPHome", "Home", null, null)
+              <p>&nbsp;</p></td>
+          </tr>
+        </tbody>
+      </table></td>
+      <td height="22">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="22" colspan="3" align="center" bgcolor="#9B1E1D"><img src="../Assets/img/ADPHomeImages/Materiales/FertiFacil_blanco_tipo.png" width="159" height="46" alt=""></td>
+    </tr>
+    <tr>
+      <td height="22" colspan="3" align="center"><img src="../Assets/img/ADPHomeImages/Materiales/AXA_logo.png" width="154" height="66" alt=""></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

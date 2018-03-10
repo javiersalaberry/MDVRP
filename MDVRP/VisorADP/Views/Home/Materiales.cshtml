@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@Styles.Render("~/Assets/css/materiales.css")
+<html>
+<head>
+    @*  <meta name="viewport" content="width=device-width" />*@
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil</title>
+    <link href="../Assets/css/estilos.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Assets/js/mootools.svn.js"></script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section').hide();
+
+            $('toggle').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section1').hide();
+
+            $('toggle1').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+    </script>
+
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+    @*<link rel="shortcut icon" type="image/x-icon" href="../../Assets/img/ADPHomeImages/Materiales/Iso38.ico" />*@
+</head>
+<body>
+    @*<div class="atras"><a href="http://fertifacil.adp.com.uy/fertifacil/login/index.php" target="_self">*@
+    <div class="atras">
+        @Html.ActionLink("ADPHome", "ADPHome", "Home", null, new { @class = "linkvolver" })
+    </div>
+    <div class="logo">
+        <img src="../Assets/img/ADPHomeImages/Materiales/logoFF.png" width="300" height="100" alt="FertiFácil " /><br />
+        <br />
+        <br />
+        A continuación compartimos materiales de interés para aprender más sobre cómo trabajar con FertiFácil.
+    </div>
+    <div class="rojo-materiales"></div>
+    <span class="rojo"></span>
+    <span class="pie"></span>
+    <div class="contenedormat">
+        <table width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="53"><a href='https://www.youtube.com/watch?v=6TWnMDOyxhs'>
+                    <img src="../Assets/img/ADPHomeImages/Materiales/play.png" width="40" height="40" /></a></td>
+                <td>Video explicativo del producto</td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("InfoProducto", "InfoProducto", "Home", null, new { @class = "pdficon" })
+                <td>Información sobre el producto</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("ProcExtraccion", "ProcExtraccion", "Home", null, new { @class = "pdficon" })</td>
+                <td>Procedimiento para extracción de muestras</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div class="pie">
+        <br />
+        Por mayor información:
+        <br />
+        <br />
+        <b>Andrea Goday</b><br />
+        andrea.goday@adp.uy<br />
+        095 366 519<br />
+        <div class="axa">
+            <br />
+            <img src="../Assets/img/ADPHomeImages/Materiales/axa.png" width="180" height="100" alt="Agricultura por Ambientes" />
+        </div>
+    </div>
+</body>
+
+
+</html>

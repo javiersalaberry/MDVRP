@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+
+<head>
+         <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>MDVRP</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=11" charset="utf-8" />   
+  
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <!-- Sets whether a web application runs in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Sets the style of the status bar for a web application. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!--<link href="~/Images/layout/icono.ico" rel="shortcut icon" type="image/x-icon" />-->
+
+    
+  
+    <link rel="stylesheet" href="http://js.arcgis.com/3.17/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" href="http://js.arcgis.com/3.17/esri/css/esri.css" />
+    @Scripts.Render("~/Assets/js/jquery-1.11.3.min.js")
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    @Scripts.Render("~/Assets/js/bootstrap.min.js")
+    @Scripts.Render("~/Assets/js/jquery.layout.js") 
+    @Styles.Render("~/Assets/css/bootstrap.min.css")  
+    @Styles.Render("~/Assets/css/bootstrap-theme.min.css")  
+    @Styles.Render("~/Assets/css/layout.css") 
+    <script type="text/javascript" src="https://js.arcgis.com/3.17/"></script>
+</head>
+<body>
+    
+        <div id="header">
+          
+            <div id="banner">
+                <img id="imgADP" src="~/Assets/img/entrega.png"/>
+            </div>
+            <div id="separador2">
+             
+            </div>
+        </div>
+       <div id="container">
+          
+                 <div id="inicio"> 
+                        @RenderBody()
+                   </div>
+         
+        </div>
+     <div id="footer">
+            <div id="separador2Footer">
+                <div id="version">
+                    © MDVRP - v1.0 - Uruguay
+                </div>
+            </div>
+        </div>
+      
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")*@
+    @* @Scripts.Render("~/bundles/modernizr")*@
+    @*@Styles.Render("~/Content/datepicker/css")*@
+    @*@Styles.Render("~/Content/css")*@
+    @RenderSection("scripts", required: false)
+</body>
+  
+</html>
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-multiselect.js")" type="text/javascript"></script>*@
+<script type="text/javascript">
+    var login = true;
+    /* -------------------- FUNCION QUE ANALIZA LA RESOLUCION DE LA PANTALLA ----------------------------- */
+    $(document).ready(function () {
+
+        if (navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod' || navigator.platform == 'Android' || navigator.userAgent.match(/iemobile/i) || navigator.userAgent.match(/Windows Phone/i)) {
+
+            //$("#registerDiv").css("width", "100%");
+        }
+        else {
+            //$("#loginDiv").css("width", "100%");
+        //    var ua = navigator.userAgent.toLowerCase();
+        //    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        //    if (isAndroid) {
+              
+        //    }
+        //    if ($(window).width() <= 1341) {
+        //        $('#banner').css("display", "none");
+        //    }
+        //    else {
+        //        $('#banner').css("display", "block");
+        //    }
+        //}
+        //if ($(window).width() <= 430) {
+        //    $('#version').css("display", "none");
+        //}
+        //else {
+        //    $('#version').css("display", "block");
+        }
+    })
+
+    window.addEventListener('resize', function (event) {
+        //if ($(window).width() <= 1341) {
+        //    $('#banner').css("display", "none");
+        //}
+        //else {
+        //    $('#banner').css("display", "block");
+        //}
+        //if ($(window).width() <= 430) {
+        //    $('#version').css("display", "none");
+        //}
+        //else {
+        //    $('#version').css("display", "block");
+        //}
+    });
+
+</script>

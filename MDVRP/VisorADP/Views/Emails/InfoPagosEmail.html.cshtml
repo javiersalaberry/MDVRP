@@ -1,0 +1,94 @@
+﻿Content-Type: text/html; charset=utf-8
+
+
+     @{
+         Layout = null;
+     }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td height="22" colspan="3" bgcolor="#9B1E1D">&nbsp;</td>
+            </tr>
+            <tr>              
+                <td align="center" margin-left: 10px; width="100%" valign="bottom" bgcolor="#c42723"><font color="#FFFFFF">Informe de polígonos pagos por el productor: @ViewBag.NombreUsuario</font></td>           
+            </tr>
+             <tr>
+                <td height="10" colspan="3" bgcolor="#000">&nbsp;</td>
+            </tr>
+            <tr>
+                <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">IdProductor: @ViewBag.IdProductor</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">Nombre: @ViewBag.Nombres</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">Apellido: @ViewBag.Apellidos</font></td>
+            </tr>
+            <tr>
+                <td align="center"  width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">Departamento: @ViewBag.Departamento</font></td>
+            </tr>
+            <tr>
+                <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">Celular: @ViewBag.Celular</font></td>
+            </tr>
+               <tr>
+                <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><font color="#000">Fecha de orden: @ViewBag.Fecha</font></td>
+            </tr>
+            <tr>
+                <td align="center" height="10" colspan="3">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1"  cellpadding="3" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <th bgcolor="#e0e5e5">Número de Orden</th>
+            <th bgcolor="#e0e5e5">Establecimiento</th>
+            <th bgcolor="#e0e5e5">Área</th>
+            <th bgcolor="#e0e5e5">Precio</th>
+            <th bgcolor="#e0e5e5">Object ID</th>
+            <th bgcolor="#e0e5e5">KMZ</th>
+           
+        </tr>
+        <tbody>
+            @foreach (var unPago in (ViewBag.Pagos))
+            {
+                <tr >
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5">@unPago.NumeroOrden</td>
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5">@unPago.Establecimiento</td>
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5">@unPago.Area</td>
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5">@unPago.Precio</td>
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5">@unPago.OIDArea</td>   
+                    <td align="center" width="10%" valign="bottom" bgcolor="#ffe8e5"><a href = '@unPago.UrlKmz'>@Html.EmbedImage("~/Assets/img/kmz.png")</a></td>   
+                </tr>  
+            }           
+        </tbody>       
+    </table>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+
+            <tr>
+                <td height="10" colspan="3" bgcolor="#000">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td height="22" colspan="3" align="center" bgcolor="#9B1E1D">
+                @*<img src="../Assets/img/ADPHomeImages/Materiales/FertiFacil_blanco_tipo.png" width="159" height="46" alt=""></td>*@
+                @Html.EmbedImage("~/Assets/img/ADPHomeImages/Materiales/FertiFacil_blanco_tipo.png")
+            </tr>
+            <tr>
+                <td height="22" colspan="3" align="center">
+                @Html.EmbedImage("~/Assets/img/ADPHomeImages/Materiales/AXA_logo.png")
+                @*<img src="../Assets/img/ADPHomeImages/Materiales/AXA_logo.png" width="154" height="66" alt=""></td>*@
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

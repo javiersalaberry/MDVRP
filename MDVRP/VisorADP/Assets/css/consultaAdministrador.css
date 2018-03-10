@@ -1,0 +1,114 @@
+﻿
+
+.table
+{
+    margin: 4px;
+    border-collapse: collapse;  
+
+}
+
+a {
+    color: #c42723 !important;
+}
+
+.header
+{
+    background-color: #f5f0f0;
+    font-weight: bold;
+    color: #fff;
+    border: 3px solid #754545;
+}
+
+.table th, .table td
+{
+    border: 1px solid black;
+    padding: 5px; 
+}
+
+#container {
+    text-align:center;
+    padding:10px;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+}
+
+.txtBusqueda {
+    width:150px;
+     margin-top:10px;
+    margin-left:15px
+}
+#btnBuscar {
+     margin-left:15px;
+     margin-top:10px;
+}
+
+#separador2
+{
+    background: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+    height: 23px;
+}
+
+#cerrarSesion{
+    color: white !important;
+}
+
+#separador2Footer
+{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    color:white;
+    height: 23px;
+    background: linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);
+}
+#lblNombreLogout{
+    color:lightyellow;
+}
+
+@media screen and (max-width: 600px)
+{
+    .nav li { float: left }
+    table, tbody, td, tr { 
+        display: block; border: none;
+    }
+    .table-bordered > tbody > tr> td {
+         border: none;
+    }
+     tr { 
+         border-bottom: 1px solid #777
+     }
+
+    thead, th { display: none }
+
+    table td:before {
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: none;
+
+    }
+    #footer {
+        display:none;
+    }
+
+    .table th, .table td
+        {
+            border: 1px solid black;
+            padding: 5px;
+            min-height: 35px;
+        }
+
+ td:nth-of-type(1):before { width: 85px; content: "Id:"; font-size: 14px;}
+ td:nth-of-type(2):before { width: 85px; content: "Usuario:"; font-size: 14px;}
+ td:nth-of-type(3):before { width: 85px; content: "Nombre:"; font-size: 14px;}
+ td:nth-of-type(4):before { width: 85px; content: "Apellido:"; font-size: 14px;}
+ td:nth-of-type(5):before { width: 85px; content: "Email:"; font-size: 14px;} 
+ td:nth-of-type(6):before { width: 85px; content: "Celular:"; font-size: 14px;}
+ td:nth-of-type(7):before { width: 85px; content: "Teléfono:"; font-size: 14px;}
+ td:nth-of-type(8):before { width: 85px; content: "R. Social:"; font-size: 14px;}
+ td:nth-of-type(9):before { width: 85px; content: "Cuit:"; font-size: 14px;}
+ td:nth-of-type(10):before { width: 85px; content: "Dirección:"; font-size: 14px;}
+ td:nth-of-type(11):before { width: 85px; content: "Depto:"; font-size: 14px; }
+
+}

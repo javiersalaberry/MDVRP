@@ -1,0 +1,503 @@
+﻿
+
+    <div id="modalErrorMsg" data-modalid="0" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalErrorMsg"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Error</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/Assets/img/error.png" class="smallImage" />
+                    <span id="errorMsg"></span>                  
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <div id="modalSuccessMsg" data-modalid="1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-success">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalSuccessMsg"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Éxito</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/Assets/img/ok.png" class="smallImage" />
+                    <span id="successMsg"></span>                  
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <div id="modalConfirmAccion" data-modalid="2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-warning">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalConfirmAccion"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Confirmación</h3>
+                </div>
+                <div id="modalConfirmBdy" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                     <button id="btnModalConfirmAceptar" type="button" class="btn btn-success" data-accion="-1"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>  
+                     <button id="btnModalConfirmCancelar" data-dismiss="modal" type="submit" class="btn btn-danger pull-left"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>  
+                    
+           @*         <input id="btnModalConfirmAceptar" type="button" value="Aceptar" class="btn-success" data-accion="-1"/>
+                    <input id="btnModalConfirmCancelar" data-dismiss="modal" type="button" value="Cancelar" class="btn-danger" />*@
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <!--ESTE NO SE ESTA USANDO PERO LO DEJO POR SI ALGUN DIA EL PRODUCTOR TIENE QUE SUBIR A MAS DE UNA CAPA-->
+    <div id="modalTipoCapa" data-modalid="3" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalTipoCapa"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Indique una capa para trabajar</h3>
+                </div>
+                <div id="modalSelectLayerToEdit" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div id="modalCargaArchivo" data-modalid="4" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalCargaArchivo"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title text-center">Carga de archivo</h3>
+                </div>
+                <div class="modal-body">
+                    <div id="divCarga">   
+                        <div class="pull-left">
+                            <form enctype="multipart/form-data" method="post" id="uploadFormKML">
+                                <label class="file-upload btn btn-danger btn-file">
+                                    Cargar KML/KMZ
+                                <input id="btnCargarKML" type="file" name="file" accept=".kml,.kmz" style="display: none;">
+                                </label>
+                            </form>
+                        </div>                         
+                        <div class="pull-right">
+                            <form enctype="multipart/form-data" method="post" id="uploadFormSHP">
+                                <label class="file-upload btn btn-danger btn-file">
+                                    Cargar Shapefile
+                                <input id="btnCargarShapefile" type="file" name="file" accept=".zip" style="display: none;">
+                                </label>
+                            </form>
+                        </div>                                       
+                    </div>
+                </div>
+                @*  <div class="modal-footer">
+
+                </div>*@
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+                    
+    
+    
+    <div id="modalPagos" data-modalid="5" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPagos"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Lista de Pagos</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="divPagosTable danger">
+                        <div class="divPagosTableHeading danger">
+                          @*  <div class="divPagosTableCell">&nbsp;</div>*@
+                            <div class="divPagosTableCell"></div>
+                            <div class="divPagosTableCell">Establecimiento</div>
+                            <div class="divPagosTableCellMov">Estado</div>
+                            <div class="divPagosTableCellMov">Área (ha)</div>
+                            <div class="divPagosTableCell">Precio (US$)</div>
+                            <div class="divPagosTableCell">Confirmar</div>
+                        </div>
+                        <div class="divPagosTableBody danger">
+                        </div>
+                    </div>
+                    <div style="margin: 10px;" class="danger">
+                        <button type="button" id="btnRealizarPago" class="btn center-block btn-danger" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPagos"><span aria-hidden="true">Realizar Pago</span></button>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <div id="modalFiltrarMapa" data-modalid="0" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-success">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalErrorMsg"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Filtrar mapa</h3>
+                </div>
+                <div id="mapFilters" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <div id="filterDiv" style="margin-left: 36%;width:180px;" class="myLeft">
+                        <input id="btnFilterMap" type="button" value="Filtrar" class="editionButton btn-danger" style="width: 180px;" />
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    
+    <div id="modalPrescripcion" data-modalid="6" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-success">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title center-block"> <span class="glyphicon glyphicon-wrench"></span> Trabajar con Prescripciones</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div><strong>Ingrese los datos para procesar:</strong></div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div class="divPrescTable borderless">
+                        <div class="divPrescTableBody">
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Nº de Orden</strong></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtIdCapaPresc" type="text" class="form-control" name="PrescIdCapa" disabled />
+                                </div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtNombreCapaPresc" type="text" class="form-control" name="PrescNombreCapa" disabled /></div>
+                            </div>
+
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Fertilizante</strong></div>
+                                <div class="divPrescTableCell">
+                                     <input id="txtFert1" type="text" class="form-control" name="PrescFert1" />
+                                </div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtFert2" type="text" class="form-control" name="PrescFert2" />
+                                </div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtFert3" type="text" class="form-control" name="PrescFert3" />
+                                </div>
+                            </div>
+
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Zona Productiva</strong></div>
+                                <div class="divPrescTableCell"><strong>(Kg o Lts/ha)</strong></div>
+                                <div class="divPrescTableCell"><strong>(Kg o Lts/ha)</strong></div>
+                                <div class="divPrescTableCell"><strong>(Kg o Lts/ha)</strong></div>
+                                <div class="divPrescTableCell"><strong>Hs/Zona</strong></div>
+                            </div>
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Alto</strong></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtAlto1" type="number" class="form-control calcularPre" name="Alto1" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtAlto2" type="number" class="form-control calcularPre" name="Alto2" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtAlto3" type="number" class="form-control calcularPre" name="Alto3" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtAlto4" type="number" class="form-control calcularPre" name="Alto4" disabled /></div>
+                            </div>
+
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Medio</strong></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtMedio1" type="number" class="form-control calcularPre" name="Medio1" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtMedio2" type="number" class="form-control calcularPre" name="Medio2" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtMedio3" type="number" class="form-control calcularPre" name="Medio3" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtMedio4" type="number" class="form-control calcularPre" name="Medio4" disabled /></div>
+                            </div>
+
+                            <div class="divPrescTableRow">
+                                <div class="divPrescTableCell"><strong>Bajo</strong></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtBajo1" type="number" class="form-control calcularPre" name="Bajo1" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtBajo2" type="number" class="form-control calcularPre" name="Bajo2" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtBajo3" type="number" class="form-control calcularPre" name="Bajo3" /></div>
+                                <div class="divPrescTableCell">
+                                    <input id="txtBajo4" type="number" class="form-control calcularPre" name="Bajo4" disabled /></div>
+                            </div>
+
+                            <div class="divPrescTableRow">
+                                 <div class="divPrescTableCellTotal"><strong>Total (Kg Totales)</strong></div>
+                                <div class="divPrescTableCellTotal">
+                                    <input id="txtTotal1" type="number" class="form-control calcularPre" name="Total1" disabled /></div>
+                                <div class="divPrescTableCellTotal">
+                                    <input id="txtTotal2" type="number" class="form-control calcularPre" name="Total2" disabled /></div>
+                                <div class="divPrescTableCellTotal">
+                                    <input id="txtTotal3" type="number" class="form-control calcularPre" name="Total3" disabled /></div>
+                                <div class="divPrescTableCellTotal" >
+                                    <input id="txtTotal4" type="number" class="form-control calcularPre" name="Total4" disabled /></div>
+                            </div>
+
+                            <div class="divPrescTableRow" >
+                                 <div class="divPrescTableCellProm"><strong>Dosis Promedio (Kg/ha)</strong></div>
+                                <div class="divPrescTableCellProm">
+                                    <input id="txtProm1" type="number" class="form-control calcularPre" name="Prom1" disabled /></div>
+                                <div class="divPrescTableCellProm">
+                                    <input id="txtProm2" type="number" class="form-control calcularPre" name="Prom2" disabled /></div>
+                                <div class="divPrescTableCellProm">
+                                    <input id="txtProm3" type="number" class="form-control calcularPre" name="Prom3" disabled /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DivTable.com -->
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-left " data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Salir</button>
+                    <button type="button" id="btnInformarPrescripcion" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPrescripcion" class="btn btn-info"> <span class="glyphicon glyphicon-share"></span> Enviar Prescripción</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+
+        <!-- /.modal -->
+        <!-- /.modal-dialog -->
+    </div>
+    
+    
+    <div id="modalNotificar" data-modalid="7" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPagos"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title center-block">Notificar resultados </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="divNotiTable borderless">
+                        <div class="divNotiTableBody">
+
+                            <div class="divNotiTableRow">
+                                <div class="divNotiTableCell"><strong>Tipo de Estudio:</strong></div>
+                                <div class="divNotiTableCell">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" value="Ambiente">Ambiente</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" value="Prescripcion">Prescripción</label>
+                                </div>
+                            </div>
+                            <div class="divNotiTableRow">
+                                <div class="divNotiTableCell"><strong>Número de orden:</strong></div>
+                                <div class="divNotiTableCell">
+                                    <input id="txtNumeroOrden" type="number" class="form-control" name="NumeroOrden" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnNotificarResultado" data-dismiss="modal" aria-label="Close" data-element-to-close="modalNotificar" class="btn btn-info"><span class="glyphicon glyphicon-share"></span> Notificar Resultados</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+     <div id="modalSubirTodos" data-modalid="8" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalSubirTodos"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title center-block">Confirmación</h3>
+                </div>
+                <div id="modalSubirBody" class="modal-body">
+                </div>                
+                 <div class="divPrescTableRow center-block">
+                        <div class="divConfirmaciónTableCell "><strong>Ingrese el número de orden:</strong></div>
+                        <div class="divConfirmaciónTableCell">
+                            <input id="txtNumeroOrdenSubir" type="number" class="form-control" name="NumeroOrden" />
+                        </div>
+                </div>
+                <div class="modal-footer">
+                     <button id="btnModalSubirCancelar" type="button" class="btn btn-danger pull-left" data-dismiss="modal"> <span class="glyphicon glyphicon-share"></span> Cancelar</button>
+                    <button id="btnModalSubirAceptar" type="button" class="btn btn-success" data-dismiss="modal" data-accion="-1"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    
+    <div id="modalPagosFrame" data-modalid="9" class="modal fade">
+        <div class="modal-dialog" style="width:810px">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPagos" onclick="consultarElementosPendientes();"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Plataforma de pago</h4>
+                </div>
+                <div class="modal-body" style="width:800px;">
+                     <div id="FormPagonline"></div>        
+                    <div id="iframe"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+     <div id="modalEstablecimientos" data-modalid="10" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading presc-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalEstablecimientos"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Lista de Establecimientos</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="divEstablecimientosTable danger">
+                        <div class="divEstablecimientosTableHeading danger">
+                            <div class="divEstablecimientosTableCell"></div>
+                            <div class="divEstablecimientosTableCell">Establecimiento</div>
+                            <div class="divEstablecimientosTableCell">Estado</div>                      
+                        </div>
+                        <div id="BodyModalEstablecimiento" class="divEstablecimientosTableBody danger">
+                        </div>
+                    </div>
+                   
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <div id="mapDiv">
+          <div class="loading ocultar elementoSobreMapa" >
+            <img src="~/Assets/img/spinner.gif"  style="display: block; margin-left: auto; margin-right: auto; margin-top: 15%";/>
+        </div> 
+
+        <div id="legendDiv" class="elementoSobreMapa panel panel-danger mapPanel" data-capa="0">
+            <div class="panel-heading">
+                <a class="collapsable" role="button" data-toggle="collapse" href="#legend" aria-expanded="true" aria-controls="legend">
+                    <img src="~/Assets/img/layers.png" />
+                    <span>Leyenda </span>
+                </a>
+            </div>
+            <div id="legend" class="accordion-body collapse">
+            </div>
+        </div>
+
+        <div id="BasemapToggle" class="elementoSobreMapa">
+        </div>
+
+        <div id="barraMenu" class="elementoSobreMapa">
+            <button id="navFiltrar" class="zoomIcono botonBarraHerramientas" type="button" data-tool="filter"
+                data-toggle="tooltip" data-placement="bottom" title="Filtrar mapa" />
+            <button id="navPan" class="zoomIcono botonBarraHerramientas" type="button" data-tool="pan"
+                data-toggle="tooltip" data-placement="bottom" title="Desplazar" />
+             <button id="navBuscar" class="zoomIcono botonBarraHerramientas" type="button" data-tool="buscar"
+                data-toggle="tooltip" data-placement="bottom" title="Buscar" />           
+            <button id="navZoomIn" class="zoomIcono botonBarraHerramientas" type="button" data-tool="zoomin"
+                data-toggle="tooltip" data-placement="bottom" title="Acercar" />
+            <button id="navZoomOut" class="zoomIcono botonBarraHerramientas" type="button" data-tool="zoomout"
+                data-toggle="tooltip" data-placement="bottom" title="Alejar" />
+            <button id="anterior" class="zoomIcono botonBarraHerramientas" type="button" data-tool="anterior"
+                data-toggle="tooltip" data-placement="bottom" title="Vista anterior" />
+            <button id="siguiente" class="zoomIcono botonBarraHerramientas" type="button" data-tool="siguiente"
+                data-toggle="tooltip" data-placement="bottom" title="Vista siguiente" />
+            <button id="navFullExt" class="zoomIcono botonBarraHerramientas" type="button" data-tool="fullextent"
+                data-toggle="tooltip" data-placement="bottom" title="Vista completa" />
+            <button id="impresora" class="zoomIcono botonBarraHerramientas" type="button" data-tool="imprimir"
+                data-toggle="tooltip" data-placement="bottom" title="Imprimir" />
+            <button id="navEdit" class="zoomIcono botonBarraHerramientas" type="button" data-tool="edit"
+                data-toggle="tooltip" data-placement="bottom" title="Edicion" />
+            <button id="navCargaArchivo" class="zoomIcono botonBarraHerramientas" type="button" data-tool="cargaArchivo"
+                data-toggle="tooltip" data-placement="bottom" title="Carga archivo" />
+
+
+        
+            <!-- INI SI ES PRODUCTOR-->
+        </div>
+
+
+        <div id="barraEdicion" class="elementoSobreMapa ocultar">
+            <div id="barraEdicionContent">
+                <button id="editionPolygonEdit" class="zoomIcono botonBarraEdicion herramientaDibujo" type="button" data-tool="polygonEdit"
+                    data-toggle="tooltip" data-placement="bottom" title="Edicion poligono" />
+                <button id="editionCircleEdit" class="zoomIcono botonBarraEdicion herramientaDibujo" type="button" data-tool="circleEdit"
+                    data-toggle="tooltip" data-placement="bottom" title="Edicion circulo" />
+                <button id="editionDelete" class="zoomIcono botonBarraEdicion" type="button" data-tool="delete"
+                    data-toggle="tooltip" data-placement="bottom" title="Eliminar" />
+                <button id="editionUndo" class="zoomIcono botonBarraEdicion ocultar" type="button" data-tool="undo"
+                    data-toggle="tooltip" data-placement="bottom" title="Deshacer" />
+                <button id="editionRedo" class="zoomIcono botonBarraEdicion ocultar" type="button" data-tool="redo"
+                    data-toggle="tooltip" data-placement="bottom" title="Rehacer" />
+            </div>
+        </div>
+
+        <div id="barraBusqueda" class="ocultar elementoSobreMapa">        
+            <button id="btnBuscarPol" class="botonBarraBusqueda" type="button" data-toggle="tooltip" title="Buscar polígono"></button>
+            <input type="number" name="search-terms" id="txtBuscarPoligono" placeholder="Introduzca el número de orden...">            
+        </div>
+
+     
+            
+      
+
+
+        <div id="editorFeatures" class="editorFeature elementoSobreMapa panel panel-danger ocultar mapPanel" data-capa="0">
+            <button type="button" class="close" data-element-to-close="editorFeatures"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+            <div class="panel-heading">
+            </div>
+            <div id="collapseEditor" class="accordion-body collapse">
+                <div class="panel-body">
+                </div>
+                <div class="panel-footer">
+                
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+         
+   
+        
+
+    
+    @Scripts.Render("~/Assets/agsjs/dijit/TOC.js")
+    @Styles.Render("~/Assets/agsjs/css/agsjs.css") 
+    @Scripts.Render("~/Assets/js/edicion.js")
+    @Scripts.Render("~/Assets/js/index.js")    
+    @Styles.Render("~/Assets/css/index.css")  
+    
+
+

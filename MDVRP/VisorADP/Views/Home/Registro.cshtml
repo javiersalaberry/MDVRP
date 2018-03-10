@@ -1,0 +1,216 @@
+﻿@model VisorADP.Models.Usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+         <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil</title>
+
+    <link rel="stylesheet" href="../Assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../Assets/css/bootstrapValidator.css" />
+
+    <!-- ace styles -->
+    <!-- <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />	-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../Assets/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript" src="../Assets/js/bootstrapValidator.js"></script>*@
+    <script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
+    <script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
+    @* @Scripts.Render("~/Assets/js/registro.js")*@
+    <style>
+        .login-panel {
+            margin-top: 5%;
+        }
+
+        .politica {
+            text-align: justify;
+            font-size: 10px;
+        }
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/img/ADPHomeImages/Materiales/Iso38.ico" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="login-panel panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Registro en el sistema</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("RegistrarUsuario", "Home", FormMethod.Post, new { id = "defaultForm", @class = "form-horizontal" }))
+                        {
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.NombreUsuario, new { @class = "col-lg-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.NombreUsuario, null, new { @class = " form-control" })
+                                    @Html.ValidationMessageFor(model => model.NombreUsuario, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Email, new { @class = "col-lg-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Password, new { @class = "col-lg-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.PasswordFor(Model => Model.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(model => Model.PasswordConfirmacion, new { @class = "col-lg-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.PasswordFor(Model => Model.PasswordConfirmacion, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.PasswordConfirmacion, "", new { @class = "text-danger" })
+                                </div>
+                            </div>                       
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Nombres, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Nombres, new { id = "nombre", @class = "form-control", placeholder = "Juan" })
+                                    @Html.ValidationMessageFor(Model => Model.Nombres, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(Model => Model.Apellidos, new { @class = "col-sm-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Apellidos, null, new { id = "apellido", @class = "form-control", placeholder = "Perez" })
+                                    @Html.ValidationMessageFor(Model => Model.Apellidos, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Celular, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Celular, null, new { id = "celular", @class = "form-control", placeholder = "09XXXXXXX" })
+                                    @Html.ValidationMessageFor(Model => Model.Celular, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(Model => Model.Telefono, new { @class = "col-sm-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Telefono, new { id = "telefono", @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Telefono, "", new { @class = "text-danger" })
+                                </div>
+                            </div>  
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.RazonSocial, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.RazonSocial, new { id = "razon", @class = " form-control", placeholder = "Razon social" })
+                                    @Html.ValidationMessageFor(Model => Model.RazonSocial, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(Model => Model.Cuit, new { @class = "col-sm-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Cuit, new { id = "cuit", @class = "form-control", placeholder = "CUIT" })
+                                    @Html.ValidationMessageFor(Model => Model.Cuit, "", new { @class = "text-danger" })
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Direccion, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Direccion, new { id = "direccion", @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Direccion, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(Model => Model.Ciudad, new { @class = "col-sm-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Ciudad, new { id = "ciudad", @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Ciudad, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Departamento, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Departamento, new { id = "departamento", @class = " form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Departamento, "", new { @class = "text-danger" })
+                                </div>
+                                @Html.LabelFor(Model => Model.Pais, new { @class = "col-sm-1 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Pais, new { id = "pais", @class = " form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Pais, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Establecimiento, new { @class = "col-sm-2 control-label" })
+                                <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.Establecimiento, new { id = "establecimiento", @class = " form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Establecimiento, "", new { @class = "text-danger" })
+                                </div>
+
+                                @Html.LabelFor(Model => Model.codpostal, new { @class = "col-sm-1 control-label" })
+                                 <div class="col-lg-4">
+                                    @Html.TextBoxFor(Model => Model.codpostal, new { id = "codpostal", @class = " form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.codpostal, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>  
+
+                            <div class="form-group">
+                                @Html.LabelFor(Model => Model.Captcha, new { id = "captchaOperation", @class = "col-lg-2 control-label" })
+                                <div class="col-lg-2">
+                                    @Html.TextBoxFor(Model => Model.Captcha, new { @class = " form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Captcha, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(Model => Model.CaptchaConfirm, new { id = "captchaConf" })
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-9 col-lg-offset-2">
+                                    <button type="submit" class="btn btn-success">Enviar</button>                          
+                                    @Html.ActionLink("Cancelar","ADPHome","Home",null, new { @class="btn btn-danger col-lg-offset-9"})
+                                </div>
+                            </div>
+                        }
+                        <div>
+                            <p class="politica">
+                                <strong>Política de privacidad</strong>
+                                La información personal que usted le proporciona a ADP se archiva en un sitio seguro, al cual sólo tiene acceso el personal autorizado, y se usa sólo con el fin para el cual usted la proporcionó, como la respuesta a una pregunta o el envío de los materiales solicitados.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="../Assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch(["../Assets/img/ADPHomeImages/ima1.png", "../Assets/img/ADPHomeImages/ima2.png", "../Assets/img/ADPHomeImages/ima3.png", "../Assets/img/ADPHomeImages/ima4.png"], { speed: 500, fade: 750, duration: 4000 });
+        //$.backstretch(["ima1.png", "ima2.png", "ima3.png", "ima4.png"], { speed: 500, fade: 750, duration: 4000 });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Generate a simple captcha
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            };
+            $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+            $('#captchaConf').val($('#captchaOperation').html());
+        });
+    </script>
+
+</body>
+
+</html>

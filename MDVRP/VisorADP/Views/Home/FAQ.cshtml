@@ -1,0 +1,272 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil</title>
+    <script type="text/javascript" src="../Assets/js/mootools.svn.js"></script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section').hide();
+
+            $('toggle').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section1').hide();
+
+            $('toggle1').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section2').hide();
+
+            $('toggle2').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section3').hide();
+
+            $('toggle3').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section4').hide();
+
+            $('toggle4').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section5').hide();
+
+            $('toggle5').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section6').hide();
+
+            $('toggle6').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section7').hide();
+
+            $('toggle7').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section8').hide();
+
+            $('toggle8').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section9').hide();
+
+            $('toggle9').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section10').hide();
+
+            $('toggle10').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var mySlide = new Fx.Slide('section11').hide();
+
+            $('toggle11').addEvent('click', function (e) {
+                e = new Event(e);
+                mySlide.toggle();
+                e.stop();
+            });
+        });
+
+</script>
+    <link href="../Assets/css/estilos.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+    @*<link rel="shortcut icon" type="image/x-icon" href="../Assets/img/ADPHomeImages/Materiales/Iso38.ico" />*@
+</head>
+    
+<body>
+    <div class="atras"> 
+        @Html.ActionLink("ADPHome", "ADPHome", "Home", null, new { @class = "linkvolver" })
+    </div>
+    <div class="logo">
+        <img src="../Assets/img/ADPHomeImages/Materiales/logoFF.png" width="300" height="100" alt="FertiFácil " />
+        <br />
+        <br />
+        <br />
+        Compartimos las respuestas a preguntas que nos realizan nuestros clientes, para ayudarte en caso que tengas las mismas dudas.
+    </div>
+    <div class="rojo"></div>
+    <span class="rojo"></span>
+    <span class="pie"></span>
+    <div class="contenedorpreg">
+        <a href="#" id="toggle" class="pregunta">¿A quién puedo recurrir si tengo dudas de funcionamiento? </a>
+        @*<br />*@
+        <div id="section">
+            <div class="respuesta">
+                Usted puede mandar un e-mail a axa@adp.uy con sus datos, y una descripción del problema o comunicarse directamente con Andrea Goday (andrea.goday@adp.uy, o 095366519). Con gusto lo ayudaremos en el proceso.
+            </div>
+        </div>
+        <a href="#" id="toggle1" class="pregunta">¿Debo tener conocimientos agronómicos para usar FertiFácil?</a>
+        <div id="section1">
+            <div class="respuesta">
+                No.
+            </div>
+        </div>
+        <a href="#" id="toggle2" class="pregunta">¿Qué necesito para usar el producto?</a>
+        <div id="section2">
+            <div class="respuesta">
+                Para usar el producto usted solamente necesita de una computadora y un Smartphone.
+            </div>
+        </div>
+        <a href="#" id="toggle3" class="pregunta">¿Qué ventajas tiene FertiFácil con respecto a la fertilización tradicional?</a>
+        <div id="section3">
+            <div class="respuesta">
+                En todo potrero existe variación espacial del rendimiento, esto significa que el rendimiento no es homogéneo en el espacio. La consecuencia de la variación depende de múltiples factores, entre ellos: suelos, topográficos, etc. Conocer la variabilidad y manejarlos en función de sus aptitudes productivas es sinónimo de aumentar la eficiencia de uso de los recursos. El aumento de la eficiencia se puede traducir en ahorro de costos o aumento del rendimiento por mejor distribución de los insumos.
+            </div>
+        </div>
+        <a href="#" id="toggle4" class="pregunta">¿Qué debo hacer cuando recibo el mapa de zonas por mail?</a>
+        <div id="section4">
+            <div class="respuesta">
+                El archivo KML que se le ha enviado, le permite navegar por el campo con cualquier aplicación que levante este tipo de archivos. Por ejemplo: Google Earth. De esta forma, podrá recorrer las diferentes zonas delimitadas por el equipo de ADP, realizando un muestreo de suelo si requiere necesario. Con la información que disponga, sea análisis químico, historial etc, ingrese a nuestra plataforma y cargue en la planilla: tipo de fertilizantes y dosis para cada una de las zonas. La plataforma le permite definir la dosis hasta 3 tipos de fertilizantes diferentes. Ejemplos: Nitrógeno,  Fosforo y Potasio.
+            </div>
+        </div>
+        <a href="#" id="toggle5" class="pregunta">¿Se puede hacer sobre campo natural?</a>
+        <div id="section5">
+            <div class="respuesta">
+                Si, lo que es importante saber en este caso, es que las pasturas naturales muchas veces se adaptan al ambiente, generando especies que persisten en función de las cualidades de cada ambiente. Esto, en algunos casos, puede perturbar el análisis, aunque si la limitante del ambiente es capacidad de almacenaje de agua de los suelos, es probable que se pueda discriminar a grueso modo estas zonas. El pastoreo es una variable que afecta de forma importante el IVDN, es por ello que, en caso de ser campo natural, le recomendamos nos mande un mail a axa@adp.uy comentándonos cómo ha sido el manejo del pastoreo, cualquier aporte es de gran valor en este caso.
+            </div>
+        </div>
+        <a href="#" id="toggle6" class="pregunta">¿Qué costo tiene?</a>
+        <div id="section6">
+            <div class="respuesta">
+                El costo es de 2.5 USD por hectárea.
+            </div>
+        </div>
+        <a href="#" id="toggle7" class="pregunta">¿Cuál es el área mínima para poder trabajar? </a>
+        <div id="section7">
+            <div class="respuesta">
+                El área mínima para utilizar el servicio es 50 hectáreas.
+            </div>
+        </div>
+        <a href="#" id="toggle8" class="pregunta">¿Cuántos años de imágenes satelitales se analiza?</a>
+        <div id="section8">
+            <div class="respuesta">
+                Depende el historial del campo, cuanto más historial más enriquecedor puede ser el trabajo. Los técnicos que realizan la labor de teledetección en imágenes satelitales, harán hincapié en la búsqueda de imágenes en los períodos críticos de cada cultivo de años contrastantes. Por ejemplo: seca 2008 versus años de buen balance hídrico.
+            </div>
+        </div>
+        <a href="#" id="toggle9" class="pregunta">¿Es necesario utilizar fertilizadora variable para poder llevar a cabo el producto?</a>
+        <div id="section9">
+            <div class="respuesta">
+                No es un requisito excluyente. En caso de no disponer de la herramienta, podrá navegar con la aplicación haciendo cambio de dosis de forma manual al ingreso de cada cambio de ambiente, como máximo se harán tres cambios de dosis en cada potrero.
+            </div>
+        </div>
+        <a href="#" id="toggle10" class="pregunta">¿Qué sucede con la información que obtienen de mi campo?</a>
+        <div id="section10">
+            <div class="respuesta">
+                La información que se obtiene es propiedad del cliente.
+            </div>
+        </div>
+        <a href="#" id="toggle11" class="pregunta">¿Existe algún acuerdo de confidencialidad?</a>
+        <div id="section11">
+            <div class="respuesta">
+                Si, nuestra POLITICA DE CONFIDENCIALIDAD dictamina que: Cuando se necesite información personal para usar o interactuar con nuestro sitio Web, la política de ADP establece que la misma—su nombre, dirección postal o de correo electrónico, o número telefónico—es privada y confidencial. La información personal que usted le proporciona a ADP se archiva en un sitio seguro, al cual sólo tiene acceso el personal autorizado, y se usa sólo con el fin para el cual usted la proporcionó, como la respuesta a una pregunta o el envío de los materiales solicitados.
+            </div>
+        </div>
+    </div>
+    <div class="pie">
+        <br />
+        Por mayor información:
+        <br />
+        <br />
+        <b>Andrea Goday</b><br />
+        andrea.goday@adp.uy<br />
+        095 366 519<br />
+        <div class="axa">
+            <br />
+            <img src="../Assets/img/ADPHomeImages/Materiales/axa.png" width="180" height="100" alt="Agricultura por Ambientes" /></div>
+    </div>
+</body>
+</html>

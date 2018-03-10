@@ -1,0 +1,138 @@
+﻿@charset "UTF-8";
+.pregunta {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #900;
+	text-decoration: none;
+	margin-bottom: 0px;
+	line-height: 32px;
+}
+.respuesta {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+
+}
+.logo {
+	height: 200px;
+	width: 300px;
+	margin-top: 20px;
+	margin-left: 22%;
+	float: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #999;
+	text-decoration: none;
+	text-align: left;
+	top: 0px;
+	clip: rect(0px,auto,auto,auto);
+	position: absolute;
+}
+.contenedorpreg {
+	margin-left: 25px;
+	width: 600px;
+	height: 888px;
+	margin-left: 22%;
+	float: left;
+	margin-top: 0px;
+	left: auto;   
+}
+.contenedormat {
+	margin-left: 25px;
+	width: 500px;
+	margin-left: 22%;
+	float: left;
+	margin-top: 0px;
+	left: auto;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+	text-align: left;
+}
+.rojo-materiales {
+
+	height: 220px;
+	width: 180px;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-left: 60%;
+	top: 0px;
+	clip: rect(0px,auto,auto,auto);
+	background-image: url('../../Assets/img/ADPHomeImages/Materiales/pico-materiales.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.rojo {
+
+	height: 220px;
+	width: 180px;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-left: 60%;
+	top: 0px;
+	clip: rect(0px,auto,auto,auto);
+	background-image: url('../../Assets/img/ADPHomeImages/Materiales/pico.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.pie {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	background-color: #900;
+	height: 160px;
+	width: 100%;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	bottom: 0px;
+	position: fixed;
+	padding-left: 22%;
+}
+.axa {
+	float: right;
+	width: 180px;
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-left: 38%;
+	position: absolute;
+	top: 0px;
+}
+.atras {
+	height: 100%;
+	width: 150px;
+	margin-top: 30px;
+	margin-left: 5%;
+	float: left;
+}
+
+a.pdficon {
+    background: url('../../Assets/img/ADPHomeImages/Materiales/pdf.png') no-repeat center right; 
+     display: block;
+     width: 40px;
+     height: 40px;
+     text-indent: -9999px;
+
+}
+
+a.linkvolver {
+    background: url('../../Assets/img/ADPHomeImages/Materiales/atras.png') no-repeat center right; 
+     display: block;
+     width: 122px;
+     height: 120px;
+     text-indent: -9999px;
+
+}
+/*a.linkVolver:hover {
+    background: url('../../Assets/img/ADPHomeImages/Materiales/atras.png') no-repeat center right; 
+     display: block;
+     width: 122px;
+     height: 120px;
+     text-indent: -9999px;
+}*/

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document id="campo">
+<name>
+<![CDATA[
+campo
+]]>
+</name>
+<visibility>1</visibility>
+<Style id="polyStyle">
+<PolyStyle>
+<color>660000ff</color>
+<colorMode>normal</colorMode>
+<fill>1</fill>
+<outline>1</outline>
+</PolyStyle>
+</Style>
+<Placemark>
+<name>
+<![CDATA[
+Lote
+]]>
+</name>
+<visibility>1</visibility>
+<styleUrl>#polyStyle</styleUrl>
+<Polygon>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<outerBoundaryIs>
+<LinearRing>
+<coordinates>
+-57.87744641304,-34.005987748538,0 
+-57.875665426254,-34.007579756245,0 
+-57.873294353485,-34.005267333007,0 
+-57.873122692108,-34.005463002027,0 
+-57.872039079666,-34.004333451928,0 
+-57.873508930206,-34.003479608812,0 
+-57.873830795288,-34.002963741103,0 
+-57.873712778091,-34.002181039285,0 
+-57.874388694763,-34.002759172006,0 
+-57.87567615509,-34.004084415239,0 
+-57.877403497696,-34.005889914688,0 
+-57.87744641304,-34.005987748538,0 
+</coordinates>
+</LinearRing>
+</outerBoundaryIs>
+</Polygon>
+</Placemark>
+</Document>
+</kml>

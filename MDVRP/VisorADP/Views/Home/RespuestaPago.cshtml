@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@Styles.Render("~/Assets/css/materiales.css")
+<html>
+<head>
+    @*  <meta name="viewport" content="width=device-width" />*@
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>ADP - FertiFácil</title>
+    <link href="../Assets/css/estilos.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Assets/css/bootstrap.min.css")
+    @Styles.Render("~/Assets/css/bootstrap-theme.min.css")
+    <script type="text/javascript" src="../Assets/js/mootools.svn.js"></script>
+   
+    <script type="text/javascript">     
+        function myFunction()
+        {
+            function inIframe() {
+                if (window.self !== window.top)
+                {                
+                    document.getElementById('btnRespPago').style.display = 'none';
+                }
+            }             
+            
+        }
+
+        function Retornar()
+        {
+            window.open("http://vigilia.ica.com.uy/adp");
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            margin-top: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+  
+</head>
+<body onload="myFunction()">  
+    
+    <div id="logoRes">
+        <img src="../Assets/img/ADPHomeImages/Materiales/logoFF.png" width="300" height="100" alt="FertiFácil " /><br />
+        
+    </div>
+    <div id="respPago">
+        <div><h1 style="font-size:22px;">@ViewBag.Mensaje</h1></div>
+        <div class="danger">
+              <button type="button" id="btnRespPago" class="btn center-block btn-danger" data-dismiss="modal" aria-label="Close" data-element-to-close="modalPagos"><span aria-hidden="true" onclick="Retornar()">Volver a la página principal, si fue redireccionado</span></button>
+        </div>
+    </div>
+   
+    <div class="pie">
+        <br />
+        Por mayor información:
+        <br />
+        <br />
+        <b>Andrea Goday</b><br />
+        andrea.goday@adp.uy<br />
+        095 366 519<br />
+        <div class="axa">
+            <br />
+            <img src="../Assets/img/ADPHomeImages/Materiales/axa.png" width="180" height="100" alt="Agricultura por Ambientes" />
+        </div>
+    </div>
+</body>
+
+
+</html>

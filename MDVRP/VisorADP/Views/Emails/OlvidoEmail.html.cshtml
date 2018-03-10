@@ -1,0 +1,62 @@
+﻿Content-Type: text/html; charset=utf-8
+
+
+     @{
+         Layout = null;
+     }
+
+     <!DOCTYPE html>
+
+  
+     <head>
+         <meta name="viewport" content="width=device-width" />
+         <title></title>
+     </head>
+     <body>
+         <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+             <tbody>
+                 <tr>
+                     <td height="22" colspan="3" bgcolor="#9B1E1D">&nbsp;</td>
+                 </tr>
+                 <tr>
+                     <td width="20%" height="100" bgcolor="#c42723">&nbsp;</td>
+                     <td width="60%" valign="bottom" bgcolor="#c42723"><font color="#FFFFFF">Estimado @ViewBag.UserName</font></td>
+                     <td width="20%" valign="bottom" bgcolor="#c42723">&nbsp;</td>
+                 </tr>                
+                 <tr>
+                     <td height="22">&nbsp;</td>
+                     <td height="22" align="left">
+                         <table width="100%" border="0" align="left">
+                             <tbody>
+                                 <tr>
+                                     <td align="left" valign="middle">
+                                         <p>
+                                             <font face="Myriad Pro, Gill Sans, Gill Sans MT, Helvetica, Arial, sans-serif" size="-1">Se ha reiniciado su contraseña. Para poder configurar una nueva contraseña presione el enlace que se muestra mas abajo.
+             </font>
+                                         </p>
+                                         <br>
+                                         <br>
+                                         <a href = '@ViewBag.link'>Presione este enlace para configurar una nueva contraseña</a>
+                                         <p>&nbsp;</p>
+                                     </td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </td>
+                     <td height="22">&nbsp;</td>
+                 </tr>
+                 <tr>
+                     <td height="22" colspan="3" align="center" bgcolor="#9B1E1D">
+                         @*<img src="../Assets/img/ADPHomeImages/Materiales/FertiFacil_blanco_tipo.png" width="159" height="46" alt=""></td>*@
+                         @Html.EmbedImage("~/Assets/img/ADPHomeImages/Materiales/FertiFacil_blanco_tipo.png")
+                 </tr>
+                 <tr>
+                     <td height="22" colspan="3" align="center">
+                         @Html.EmbedImage("~/Assets/img/ADPHomeImages/Materiales/AXA_logo.png")
+                         @*<img src="../Assets/img/ADPHomeImages/Materiales/AXA_logo.png" width="154" height="66" alt=""></td>*@
+                 </tr>
+             </tbody>
+         </table>
+     </body>
+
+     </html>

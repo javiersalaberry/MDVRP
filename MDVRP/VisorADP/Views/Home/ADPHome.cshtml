@@ -1,0 +1,186 @@
+﻿@model VisorADP.Models.Logueo
+@{
+    Layout = null;
+}
+@*@Styles.Render("~/Assets/css/login.css")
+@Scripts.Render("~/Assets/js/login.js")*@
+
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=11" charset="utf-8" />
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+<!-- Sets whether a web application runs in full-screen mode. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- Sets the style of the status bar for a web application. -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!--<link href="~/Assets/img/layout/icono.ico" rel="shortcut icon" type="image/x-icon" />-->
+
+
+<script type="text/javascript" src="https://js.arcgis.com/3.13/"></script>
+
+<link rel="stylesheet" href="http://js.arcgis.com/3.13/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css" />
+@Scripts.Render("~/Assets/js/jquery-1.11.3.min.js")
+@Scripts.Render("~/Assets/js/bootstrap.min.js")
+@Scripts.Render("~/Assets/js/jquery.layout.js")
+@Scripts.Render("~/Assets/js/login.js")
+@Styles.Render("~/Assets/css/bootstrap.min.css")
+@Styles.Render("~/Assets/css/bootstrap-theme.min.css")
+@Styles.Render("~/Assets/css/login.css")
+<html>
+<head>
+       <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FERTIFACIL">     
+    <link rel="apple-touch-icon" sizes="57x57" href="~/Assets/img/ADPHomeImages/Movil/Ico-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Assets/img/ADPHomeImages/Movil/Ico-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Assets/img/ADPHomeImages/Movil/Ico-114x114.png">
+
+    <!-- iPad - landscape (748x1024) -->
+    <link rel="apple-touch-startup-image" href="~/Assets/img/ADPHomeImages/Movil/splash_748x1024"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
+    <!-- iPad - portrait (768x1004) -->  
+    <link rel="apple-touch-startup-image" href="~/Assets/img/ADPHomeImages/Movil/splash_768x1004" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
+    <!-- iPhone - (320x460) -->
+    <link rel="apple-touch-startup-image" href="~/Assets/img/ADPHomeImages/Movil/splash_320x640" media="screen and (min-device-width: 200px) and (max-device-width: 320) and (orientation:portrait)" />
+
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="~/Assets/img/Iso38.ico" />
+    <title>MDVRP</title>
+</head>
+<body>
+    <div id="boo">
+     
+    </div>
+    <div id="bo1">
+      
+    </div>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="container">
+
+        <div class="login-panel panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ingreso al sistema</h3>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @class = "login-form" }))
+                {
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="input-group input-group-xs">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                @Html.TextBoxFor(Model => Model.NombreUsuario, new { placeholder = "Usuario", @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-xs">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                @Html.PasswordFor(Model => Model.Password, new { placeholder = "Password", @class = "form-control" })
+                            </div>
+                        </div>
+                        <!-- Change this to a button or input when using this as a form -->
+                        <input type="submit" name="login" value=" Ingresar " class="btn btn-xs btn-danger btn-block">
+                        <div>
+                            @Html.ActionLink("Registrarse", "Registro", "Home", null, new { id = "btnRegistro", @class = "btn btn-xs btn-info", })
+                            @Html.ActionLink("Recuperar Contraseña", "Olvido", "Home", null, new { id = "btnPassReset", @class = "btn btn-xs btn-info pull-right", })
+                        </div>                        
+                    </fieldset>            
+                }
+                <div>
+                    <div id="errorMsg" class="text-danger">@TempData["ErrorMsg"]</div>
+                </div>
+            </div>
+        </div>
+        <div id="divConsAdmin">
+             <button id="btnAdminLogin" title="Acceso Administradores" type="button" class="btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-cog"></span></button>
+         @*   <a title="Acceso Administradores" href="@Url.Action("LoginAdministrador", new { id = "btnConsultaAdmin" })">
+                <i class="glyphicon glyphicon-cog"></i>
+                <span class="sr-only">Administrador</span>
+            </a>*@
+           
+        </div>       
+    </div>
+
+    <div id="modalAdminLogin" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-success">
+                <div class="modal-header panel-heading log-admin">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalAdminLogin"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Administrador</h3>
+                </div>
+                <div class="modal-body">
+                    <div id="divLabelAdmLogin" >
+                        <div><strong>Ingrese la contraseña de administrador:</strong></div>
+                    </div>
+                    <div>&nbsp;</div>                  
+                    <div id="divPasswordAdmLogin">
+                            @Html.Password("Contraseña Administrador", null, new { @id = "txtPwdAdmin" })
+                    </div>                  
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <button id="btnLoginAdminCancelar" type="button" class="btn btn-danger pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-share"></span> Cancelar</button>
+                        <button id="btnLoginAdminAceptar" type="button" class="btn btn-success" data-dismiss="modal" data-accion="-1"><span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+     <div id="modalErrorMsgAdmLog" data-modalid="0" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content panel-danger">
+                <div class="modal-header panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-element-to-close="modalErrorMsgAdmLog"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Error</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/Assets/img/error.png" class="smallImage" />
+                    <span id="errorMsgAdmLog"></span>                  
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    @*<script type="text/javascript" src="~/Assets/js/jquery.backstretch.min.js"></script>*@
+    @Scripts.Render("~/Assets/js/jquery.backstretch.min.js")
+
+   @*  <script>
+        //document.writeln(screen.width + " x " + screen.height) ;
+        if (screen.width < 569) {
+            $.backstretch(["Assets/img/ADPHomeImages/Movil/ima1.png", "Assets/img/ADPHomeImages/Movil/ima2.png", "Assets/img/ADPHomeImages/Movil/ima3.png", "Assets/img/ADPHomeImages/Movil/ima4.png", "Assets/img/ADPHomeImages/Movil/ima5.png", "Assets/img/ADPHomeImages/Movil/ima6.png"], { speed: 500, fade: 750, duration: 4000 });
+        } else {
+            $.backstretch(["Assets/img/ADPHomeImages/ima1.png", "Assets/img/ADPHomeImages/ima2.png", "Assets/img/ADPHomeImages/ima3.png", "Assets/img/ADPHomeImages/ima4.png", "Assets/img/ADPHomeImages/ima5.png", "Assets/img/ADPHomeImages/ima6.png"], { speed: 500, fade: 750, duration: 4000 });
+        }
+    </script>*@
+
+
+   <script>
+    	    //document.writeln(screen.width + " x " + screen.height) ;
+    	    if (screen.width < 569) {
+    	        $.backstretch(["Assets/img/camiones.png"], { speed: 500, fade: 750, duration: 4000 });
+    	    } else {
+    	        $.backstretch(["Assets/img/camiones.png"], { speed: 500, fade: 750, duration: 4000 });
+    	    }
+    </script>
+</body>
+
+
+</html>

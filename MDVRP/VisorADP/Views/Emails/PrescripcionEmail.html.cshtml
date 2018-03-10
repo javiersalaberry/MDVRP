@@ -1,0 +1,79 @@
+﻿Content-Type: text/html; charset=utf-8
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div>
+            El usuario <strong>@ViewBag.NombreUsuario (@ViewBag.Nombre @ViewBag.Apellido)</strong> ha generado un nueva solicitud de prescripción para el número de orden <strong>@ViewBag.IdCapa : @ViewBag.NombreCapa</strong><br>
+            <br>
+        </div>
+        <table>
+            <tr>
+                <td><strong>Número Orden</strong></td>
+                <td>@ViewBag.IdCapa - @ViewBag.NombreCapa</td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td><strong>Fertilizante</strong></td>
+                <td>@ViewBag.Fert1</td>
+                <td>@ViewBag.Fert2</td>
+                <td>@ViewBag.Fert3</td>
+            </tr>
+            <!-- Dosis (Kg o Lts/ha -->
+            <tr>
+                <td><strong>Zona Productiva</strong></td>
+                <td style="text-align: center;"><strong>(Kg o Lts/ha)</strong></td>
+                <td style="text-align: center;"><strong>(Kg o Lts/ha)</strong></td>
+                <td style="text-align: center;"><strong>(Kg o Lts/ha)</strong></td>
+                <td style="text-align: center;"><strong>Hs/Zona</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Alto  </strong></td>
+                <td style="text-align: right;">@ViewBag.Alto1</td>
+                <td style="text-align: right;">@ViewBag.Alto2</td>
+                <td style="text-align: right;">@ViewBag.Alto3</td>
+                <td style="text-align: right;">@ViewBag.Alto4</td>
+            </tr>
+            <tr>
+                <td><strong>Medio  </strong></td>
+                <td style="text-align: right;">@ViewBag.Medio1</td>
+                <td style="text-align: right;">@ViewBag.Medio2</td>
+                <td style="text-align: right;">@ViewBag.Medio3</td>
+                <td style="text-align: right;">@ViewBag.Medio4</td>
+            </tr>
+            <tr>
+                <td><strong>Bajo  </strong></td>
+                <td style="text-align: right;">@ViewBag.Bajo1</td>
+                <td style="text-align: right;">@ViewBag.Bajo2</td>
+                <td style="text-align: right;">@ViewBag.Bajo3</td>
+                <td style="text-align: right;">@ViewBag.Bajo4</td>
+            </tr>
+            <tr>
+                <td><strong>TOTAL (Kg Totales)  </strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Total1</strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Total2</strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Total3</strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Total4</strong></td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Dosis Promedio (Kg/ha)</strong><p></p>
+                    </p></td>
+                <td style="text-align: right;"><strong>@ViewBag.Prom1</strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Prom2</strong></td>
+                <td style="text-align: right;"><strong>@ViewBag.Prom3</strong></td>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

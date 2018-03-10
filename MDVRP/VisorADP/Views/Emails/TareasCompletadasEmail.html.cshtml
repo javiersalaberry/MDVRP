@@ -1,0 +1,86 @@
+﻿Content-Type: text/html; charset=utf-8
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Comunicación FertiFácil</title>
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td colspan="3">
+                     @Html.EmbedImage("~/Assets/img/prescripcion/cabezal.png")
+                    @*<img src="http://fertifacil.adp.com.uy/fertifacil/imagenes/cabezal.png" width="720" height="138" alt="" /></td>*@
+            </tr>
+            <tr>
+                <td width="43">&nbsp;</td>
+                <td width="616">
+                    <br>
+                    <font face="Gotham, Helvetica Neue, Helvetica, Arial, sans-serif" size="-1"><strong>Estimado @ViewBag.NombreProductor,</strong></font>
+
+
+                    <font face="Gotham, Helvetica Neue, Helvetica, Arial, sans-serif" size="-1">
+        <p align="justify">Se encuentra finalizado el proceso de subdivisión de zonas de diferente potencial del establecimiento <strong>@ViewBag.Establecimiento</strong> y está pronto para ser descargado en su pc y/o Smartphone.
+
+El mapa se encuentra subdividido en 3 zonas de diferente potencial: zona de alto, medio y bajo potencial. La variable en estudio que permitió dicha clasificación fue el índice NDVI obtenido de imágenes satelitales de campañas relevantes.
+
+El mismo podrá ser utilizado como guía para el muestreo georeferenciado de suelos y/o plantas y posterior recomendación de fertilización variable por ambientes.
+
+Cabe acotar que  este mapa puede ser utilizado también como guía para la planificación del sistema, por ejemplo: rotación de cultivo, siembra variable etc. Se recomienda previo a ello, complementar este mapa con información mas detallada y especifica, como ser estudio edafológico o sumar otras capas GIS relevantes.
+<BR><BR>
+Saluda Atte: Equipo Técnico de Agricultura por Ambientes.
+<BR><BR>
+<strong>Datos de la capa instalada:</strong> <BR> 
+<p style='text-indent: 15px;'>Descripción       :  @ViewBag.Establecimiento  <BR>
+<p style='text-indent: 15px;'>Tipo de capa     :  @ViewBag.TipoCapa <BR>
+<p style='text-indent: 15px;'>Número de orden     :  @ViewBag.NumeroOrden <BR>
+<p style='text-indent: 15px;'>Link del archivo : <a href = '@ViewBag.UrlKMZ'>@Html.EmbedImage("~/Assets/img/kmz.png")</a><BR> 
+</font>
+                    <p>&nbsp;</p>
+                </td>
+                <td width="53">&nbsp;</td>
+            </tr>
+            <tr align="left" valign="top">
+                <td colspan="2" bgcolor="#B51C1B">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td width="29%">
+                                     @Html.EmbedImage("~/Assets/img/prescripcion/yahora.png")
+                                    @*<img src="http://fertifacil.adp.com.uy/fertifacil/imagenes/yahora.png" width="223" height="138" alt="" /></td>*@
+                                <td width="71%"><font color="#FFFFFF" face="Gotham, Helvetica Neue, Helvetica, Arial, sans-serif" size="-1">El siguiente paso es... haga tal o cual cosa....</font></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td bgcolor="#B51C1B">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                     @Html.EmbedImage("~/Assets/img/prescripcion/pie.png")
+                    @*<img src="http://fertifacil.adp.com.uy/fertifacil/imagenes/pie.png" alt="" width="720" height="114" usemap="#Map" /></td>*@
+            </tr>
+        </tbody>
+    </table>
+
+    <map name="Map">
+        <area shape="circle" coords="280,65,38" href="https://www.youtube.com/watch?v=6TWnMDOyxhs" target="_blank" alt="Video FertiFácil">
+        <area shape="rect" coords="34,75,185,90" href="mailto:andrea.goday@adp.uy" target="_blank" alt="andrea.goday@adp.uy">
+    </map>
+</body>
+</html>
