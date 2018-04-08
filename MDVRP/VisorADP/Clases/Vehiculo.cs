@@ -11,6 +11,6 @@ namespace VisorADP.Clases
         public string matricula { get; set; }
         public int capacidad { get; set; }        
         public string imei { get; set; }
-        //ver
+        //ver 2
     }
 }
